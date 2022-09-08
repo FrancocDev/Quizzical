@@ -40,7 +40,6 @@ function Game(){
             {...question, selected: selected} :
             question
         ))
-        console.log(questions)
     }
 
     function handleFinish(){
