@@ -27,7 +27,6 @@ function Question(props){
         )
     })
 
-    console.log(decode("Don&‌#039;t forget that &‌pi; = 3.14 &‌amp; doesn&‌#039;t equal 3."))
     return(
             <div className="question">
                 <h2 className="question--title">{decode(props.question)}</h2>
