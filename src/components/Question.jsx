@@ -1,30 +1,38 @@
-import React, {useState} from "react"
+import React from "react"
 import _ from 'underscore'
+import {decode} from 'html-entities';
 
 function Question(props){    
     const allOptions = props.options.map((option, index) => {
-        let myStyle;
-        if(props.selected === index){
-            myStyle = {backgroundColor: "yellow"}
-        } else if (props.correctId === index){
-            myStyle = {backgroundColor: "green"}
+        let answerStyle;
+        if(props.correctId !== null){   
+            if(props.correctId === index){
+                answerStyle = "question--option--correct"
+            } else if(props.selected === index){
+                answerStyle = "question--option--selected-wrong"
+            } else {
+                answerStyle = "question--option--transparent"
+            }
+        } else if (props.selected === index){
+             answerStyle = "question--option--selected"
         }
-        
-        
+
         return(
-            <button key={option} 
-                style={myStyle}
+            <button 
+                key={option} 
+                className={`question--option ${answerStyle}`}
                 onClick={() => props.handleAnswer(props.id, index)}>
-                {_.unescape(option)}
+                {decode(option)}
             </button>
         )
     })
 
+    console.log(decode("Don&‌#039;t forget that &‌pi; = 3.14 &‌amp; doesn&‌#039;t equal 3."))
     return(
-            <>
-                <h2>{_.unescape(props.question)}</h2>
-                {allOptions}
-            </>
+            <div className="question">
+                <h2 className="question--title">{decode(props.question)}</h2>
+                <div className="question--all-options">{allOptions}</div>
+            </div>
         )
 }
 

@@ -1,3 +1,114 @@
+#root{
+    width:100vw;
+    height: 100vh;
+    background: url(./assets/inferior-blob.svg) left bottom no-repeat,
+    url(./assets/superior-blob.svg) right top no-repeat;
+    background-color: #F5F7FB;
+}
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
 .start-screen{
-    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.start-screen--title{
+    font-family: 'Karla';
+    font-weight: 700;
+    font-size: 2.625rem;
+    margin: 0;
+}
+.start-screen--description{
+    font-family: "Inter";
+    font-weight: 400;
+    font-size: 1rem;
+    margin-bottom: 2.5rem;
+}
+.primary-btn{
+    height: 3.25rem;
+    width: 11rem;
+    border-radius: 1rem;
+    background-color: #4D5B9E;
+    border: 0;
+    color: white;
+    font-family: 'Inter';
+    font-weight: 500;
+    font-size: 1rem;
+}
+.game{
+    max-width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+}
+.question{
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    max-width: 100%;
+}
+.question--title{
+    margin: 0;
+    font-family: 'Karla';
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: #293264;
+}
+.question--all-options{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+.question--option{
+    box-sizing: border-box;
+    height:  1.5rem;
+    background-color: transparent;
+    border: 1px solid #4D5B9E;
+    color: #293264;
+    border-radius: .75rem;
+    font-family: 'Inter';
+    font-weight: 500;
+    font-size: 1rem;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+}
+.question--option--selected{
+    border-color: transparent;
+    background-color: #D6DBF5;
+}
+.question--option--correct{
+    border-color: transparent;
+    background-color: #94D7A2;
+}
+.question--option--transparent{
+    opacity: 0.5;
+}
+.question--option--selected-wrong{
+    background-color: #F8BCBC;
+    opacity: 0.5;
+}
+.game--check-answers{
+    align-self: center;
+}
+.game--score{
+    align-self: center;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1.5rem;
+}
+.game--score--text{
+    font-family: "Inter";
+    font-weight: 700;
+    color: #293264;
+    font-size: 1.25rem;
 }

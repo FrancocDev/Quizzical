@@ -71,18 +71,16 @@ function Game(){
         setIsFinished(false)
     }
 
-    
-
     return(
-        <>
+        <div className="game">
             {myRender}
             {isFinished ?
-            <div>
-                <span>You scored {score}/5 correct answers.</span>
-                <button onClick={resetGame}>Play again</button>
+            <div className="game--score">
+                <span className="game--score--text">You scored {score}/5 correct answers.</span>
+                <button onClick={resetGame} className="primary-btn game--score--button">Play again</button>
             </div>
-            : <button onClick={handleFinish}>Check answers</button>}
-        </>
+            : <button className="primary-btn game--check-answers" onClick={handleFinish}>Check answers</button>}
+        </div>
     )
 }
 
